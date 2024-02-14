@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/userprofilelist1_item_model.dart';import 'package:tissue_culture/presentation/k118_screen/models/k118_model.dart';part 'k118_state.dart';final k118Notifier = StateNotifierProvider<K118Notifier, K118State>((ref) => K118Notifier(K118State(participantsController: TextEditingController(), k118ModelObj: K118Model(userprofilelist1ItemList: [Userprofilelist1ItemModel(tagNumberText: "Tag Number", twentyThreeThousandFourHundred: "2345656", varietyText: "Variety", sevenText: "07", speciesText: "Species", twoText: "02", titleText: "Sucker collected", oneText: "20"), Userprofilelist1ItemModel(tagNumberText: "Tag Number", twentyThreeThousandFourHundred: "2346745", varietyText: "Variety", sevenText: "07", speciesText: "Species", twoText: "02", titleText: "Sucker collected", oneText: "20")]))));
+/// A notifier that manages the state of a K118 according to the event that is dispatched to it.
+class K118Notifier extends StateNotifier<K118State> {K118Notifier(K118State state) : super(state);
+
+ }

@@ -1,0 +1,13 @@
+import 'notifier/defaultmap_notifier.dart';import 'package:flutter/material.dart';import 'package:tissue_culture/core/app_export.dart';import 'package:tissue_culture/widgets/app_bar/appbar_leading_image.dart';import 'package:tissue_culture/widgets/app_bar/appbar_subtitle.dart';import 'package:tissue_culture/widgets/app_bar/custom_app_bar.dart';class DefaultmapPage extends ConsumerStatefulWidget {const DefaultmapPage({Key? key}) : super(key: key);
+
+@override DefaultmapPageState createState() =>  DefaultmapPageState();
+
+ }
+class DefaultmapPageState extends ConsumerState<DefaultmapPage> {@override Widget build(BuildContext context) { return SafeArea(child: Scaffold(backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1), appBar: _buildAppBar(context), body: Container(width: double.maxFinite, padding: EdgeInsets.symmetric(vertical: 24.v), child: Column(children: [_buildDefaultMapFrame(context), SizedBox(height: 25.v), Divider(color: appTheme.gray600), SizedBox(height: 24.v), Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: 24.h), child: Row(children: [CustomImageView(imagePath: ImageConstant.imgGroup1000001989, height: 48.adaptSize, width: 48.adaptSize, onTap: () {onTapImgImage(context);}), Padding(padding: EdgeInsets.only(left: 4.h, top: 12.v, bottom: 10.v), child: Text("msg_select_your_own".tr, style: CustomTextStyles.bodyLargePrimaryContainer))]))), SizedBox(height: 5.v)])))); } 
+/// Section Widget
+PreferredSizeWidget _buildAppBar(BuildContext context) { return CustomAppBar(leadingWidth: 48.h, leading: AppbarLeadingImage(imagePath: ImageConstant.imgArrowDownPrimarycontainer, margin: EdgeInsets.only(left: 24.h, top: 20.v, bottom: 20.v)), centerTitle: true, title: AppbarSubtitle(text: "lbl_offline_maps".tr), styleType: Style.bgFill_2); } 
+/// Section Widget
+Widget _buildDefaultMapFrame(BuildContext context) { return Padding(padding: EdgeInsets.only(left: 24.h, right: 30.h), child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [CustomImageView(imagePath: ImageConstant.imgHugeIconInterBlueGray9000424x24, height: 24.adaptSize, width: 24.adaptSize, margin: EdgeInsets.only(bottom: 36.v)), Expanded(child: Container(width: 265.h, margin: EdgeInsets.only(left: 16.h), child: Text("msg_to_use_maps_offline".tr, maxLines: 3, overflow: TextOverflow.ellipsis, style: theme.textTheme.bodySmall!.copyWith(height: 1.67))))])); } 
+/// Navigates to the mapDownloadScreen when the action is triggered.
+onTapImgImage(BuildContext context) { NavigatorService.pushNamed(AppRoutes.mapDownloadScreen, ); } 
+ }

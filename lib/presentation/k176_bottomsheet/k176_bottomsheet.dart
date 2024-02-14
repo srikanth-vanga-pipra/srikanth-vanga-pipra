@@ -1,0 +1,16 @@
+import 'notifier/k176_notifier.dart';import 'package:flutter/material.dart';import 'package:tissue_culture/core/app_export.dart';import 'package:tissue_culture/widgets/custom_elevated_button.dart';import 'package:tissue_culture/presentation/k177_bottomsheet/k177_bottomsheet.dart';class K176Bottomsheet extends ConsumerStatefulWidget {const K176Bottomsheet({Key? key}) : super(key: key);
+
+@override K176BottomsheetState createState() =>  K176BottomsheetState();
+
+ }
+class K176BottomsheetState extends ConsumerState<K176Bottomsheet> {@override Widget build(BuildContext context) { return Container(width: double.maxFinite, decoration: AppDecoration.fillBlueGray.copyWith(borderRadius: BorderRadiusStyle.customBorderTL24), child: Container(padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 16.v), decoration: AppDecoration.outlineBlack900.copyWith(borderRadius: BorderRadiusStyle.customBorderTL24), child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Align(alignment: Alignment.center, child: Container(height: 4.v, width: 40.h, decoration: BoxDecoration(color: theme.colorScheme.primaryContainer.withOpacity(1), borderRadius: BorderRadius.circular(2.h)))), SizedBox(height: 16.v), CustomImageView(imagePath: ImageConstant.imgClose, height: 24.adaptSize, width: 24.adaptSize, onTap: () {onTapImgClose(context);}), SizedBox(height: 77.v), Align(alignment: Alignment.center, child: Container(width: 268.h, margin: EdgeInsets.only(left: 21.h, right: 22.h), child: Text("msg_are_you_sure_you2".tr, maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: CustomTextStyles.titleSmallGray600.copyWith(height: 1.71)))), SizedBox(height: 16.v), Padding(padding: EdgeInsets.only(left: 7.h, right: 19.h), child: Row(children: [Text("lbl_07".tr, style: CustomTextStyles.titleLargePrimaryContainer20), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_01".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 14.h), child: Text("lbl_da".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_080808".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_2".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_m".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_08".tr, style: CustomTextStyles.titleLargePrimaryContainer20)), Padding(padding: EdgeInsets.only(left: 11.h), child: Text("lbl_1".tr, style: CustomTextStyles.titleLargePrimaryContainer20))])), SizedBox(height: 174.v), CustomElevatedButton(text: "lbl_discard".tr, onPressed: () {onTapDiscard(context);}), SizedBox(height: 8.v)]))); } 
+
+/// Navigates back to the previous screen.
+onTapImgClose(BuildContext context) { NavigatorService.goBack(); } 
+
+/// Shows a modal bottom sheet with [K177Bottomsheet] 
+/// widget content.
+/// The sheet is displayed on top of the current view with scrolling enabled if 
+/// content exceeds viewport height.
+onTapDiscard(BuildContext context) { showModalBottomSheet(context: context, builder: (_)=>K177Bottomsheet(),isScrollControlled: true); } 
+ }

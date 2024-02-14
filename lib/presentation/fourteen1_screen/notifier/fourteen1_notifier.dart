@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/framelist_item_model.dart';import 'package:tissue_culture/presentation/fourteen1_screen/models/fourteen1_model.dart';part 'fourteen1_state.dart';final fourteen1Notifier = StateNotifierProvider<Fourteen1Notifier, Fourteen1State>((ref) => Fourteen1Notifier(Fourteen1State(soilTypeController: TextEditingController(), fourteen1ModelObj: Fourteen1Model(framelistItemList: [FramelistItemModel(tagNumber: "Tag Number", text: ":", twentyThreeThousandFourHundred: "2345656", variety: "Variety", text1: ":", seven: "07", species: "Species", text2: ":", two: "02"), FramelistItemModel(tagNumber: "Tag Number", text: ":", twentyThreeThousandFourHundred: "2346745", variety: "Variety", text1: ":", seven: "07", species: "Species", text2: ":", two: "02")]))));
+/// A notifier that manages the state of a Fourteen1 according to the event that is dispatched to it.
+class Fourteen1Notifier extends StateNotifier<Fourteen1State> {Fourteen1Notifier(Fourteen1State state) : super(state);
+
+ }

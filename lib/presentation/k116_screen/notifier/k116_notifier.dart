@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/userprofile7_item_model.dart';import 'package:tissue_culture/presentation/k116_screen/models/k116_model.dart';part 'k116_state.dart';final k116Notifier = StateNotifierProvider<K116Notifier, K116State>((ref) => K116Notifier(K116State(k116ModelObj: K116Model(userprofile7ItemList: [Userprofile7ItemModel(tagNumberText: "Tag Number", colonText: ":", tagNumberValueText: "2345656", varietyText: "Variety", colonText1: ":", varietyValueText: "07", speciesText: "Species", colonText2: ":", speciesValueText: "02"), Userprofile7ItemModel(tagNumberText: "Tag Number", colonText: ":", tagNumberValueText: "2346745", varietyText: "Variety", colonText1: ":", varietyValueText: "07", speciesText: "Species", colonText2: ":", speciesValueText: "02")]))));
+/// A notifier that manages the state of a K116 according to the event that is dispatched to it.
+class K116Notifier extends StateNotifier<K116State> {K116Notifier(K116State state) : super(state);
+
+ }

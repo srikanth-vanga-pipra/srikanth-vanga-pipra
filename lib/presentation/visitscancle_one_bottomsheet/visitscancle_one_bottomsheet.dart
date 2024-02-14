@@ -1,0 +1,10 @@
+import 'notifier/visitscancle_one_notifier.dart';import 'package:flutter/material.dart';import 'package:tissue_culture/core/app_export.dart';import 'package:tissue_culture/widgets/custom_elevated_button.dart';import 'package:tissue_culture/widgets/custom_text_form_field.dart';class VisitscancleOneBottomsheet extends ConsumerStatefulWidget {const VisitscancleOneBottomsheet({Key? key}) : super(key: key);
+
+@override VisitscancleOneBottomsheetState createState() =>  VisitscancleOneBottomsheetState();
+
+ }
+class VisitscancleOneBottomsheetState extends ConsumerState<VisitscancleOneBottomsheet> {@override Widget build(BuildContext context) { return Container(width: double.maxFinite, decoration: AppDecoration.fillBlueGray.copyWith(borderRadius: BorderRadiusStyle.customBorderTL24), child: Container(padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 16.v), decoration: AppDecoration.outlineBlack900.copyWith(borderRadius: BorderRadiusStyle.customBorderTL24), child: Column(mainAxisSize: MainAxisSize.min, children: [Container(height: 4.v, width: 40.h, decoration: BoxDecoration(color: theme.colorScheme.primaryContainer.withOpacity(1), borderRadius: BorderRadius.circular(2.h))), SizedBox(height: 12.v), Align(alignment: Alignment.centerLeft, child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [CustomImageView(imagePath: ImageConstant.imgClose, height: 24.adaptSize, width: 24.adaptSize, margin: EdgeInsets.only(top: 3.v, bottom: 7.v), onTap: () {onTapImgClose(context);}), Padding(padding: EdgeInsets.only(left: 74.h), child: Text("lbl_cancel_visit".tr, style: theme.textTheme.titleLarge))])), SizedBox(height: 26.v), Consumer(builder: (context, ref, _) {return CustomTextFormField(controller: ref.watch(visitscancleOneNotifier).enterReasonController, hintText: "msg_enter_the_reason2".tr, textInputAction: TextInputAction.done, maxLines: 4, contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 11.v));}), SizedBox(height: 218.v), CustomElevatedButton(text: "lbl_update".tr), SizedBox(height: 8.v)]))); } 
+
+/// Navigates back to the previous screen.
+onTapImgClose(BuildContext context) { NavigatorService.goBack(); } 
+ }
