@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/userprofile8_item_model.dart';import 'package:tissue_culture/presentation/k117_screen/models/k117_model.dart';part 'k117_state.dart';final k117Notifier = StateNotifierProvider<K117Notifier, K117State>((ref) => K117Notifier(K117State(k117ModelObj: K117Model(userprofile8ItemList: [Userprofile8ItemModel(tagNumberText: "Tag Number", twentyThreeThousandFourHundred: "2345656", varietyText: "Variety", sevenText: "07", speciesText: "Species", twoText: "02", titleText: "Sucker collected", oneText: "20"), Userprofile8ItemModel(tagNumberText: "Tag Number", twentyThreeThousandFourHundred: "2346745", varietyText: "Variety", sevenText: "07", speciesText: "Species", twoText: "02", titleText: "Sucker collected", oneText: "20")]))));
+/// A notifier that manages the state of a K117 according to the event that is dispatched to it.
+class K117Notifier extends StateNotifier<K117State> {K117Notifier(K117State state) : super(state);
+
+ }

@@ -1,0 +1,15 @@
+import 'notifier/onboarding_two_notifier.dart';import 'package:flutter/material.dart';import 'package:smooth_page_indicator/smooth_page_indicator.dart';import 'package:tissue_culture/core/app_export.dart';import 'package:tissue_culture/widgets/app_bar/appbar_leading_image.dart';import 'package:tissue_culture/widgets/app_bar/appbar_subtitle_five.dart';import 'package:tissue_culture/widgets/app_bar/custom_app_bar.dart';import 'package:tissue_culture/widgets/custom_elevated_button.dart';class OnboardingTwoScreen extends ConsumerStatefulWidget {const OnboardingTwoScreen({Key? key}) : super(key: key);
+
+@override OnboardingTwoScreenState createState() =>  OnboardingTwoScreenState();
+
+ }
+class OnboardingTwoScreenState extends ConsumerState<OnboardingTwoScreen> {@override Widget build(BuildContext context) { return SafeArea(child: Scaffold(backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1), appBar: _buildAppBar(context), body: Container(width: 312.h, margin: EdgeInsets.only(left: 23.h, right: 23.h, bottom: 5.v), child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Text("lbl_heading".tr, style: theme.textTheme.headlineSmall), SizedBox(height: 10.v), SizedBox(width: 312.h, child: RichText(text: TextSpan(children: [TextSpan(text: "msg_lorem_ipsum_is_simply2".tr, style: CustomTextStyles.titleSmallff1e1f20), TextSpan(text: "msg_lorem_ipsum_is_simply3".tr, style: CustomTextStyles.titleSmallff1e1f20)]), textAlign: TextAlign.left)), SizedBox(height: 104.v), Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Container(height: 8.v, margin: EdgeInsets.only(top: 21.v, bottom: 19.v), child: AnimatedSmoothIndicator(activeIndex: 0, count: 3, effect: ScrollingDotsEffect(spacing: 8, activeDotColor: theme.colorScheme.primaryContainer.withOpacity(1), dotColor: appTheme.gray300, dotHeight: 8.v, dotWidth: 8.h))), CustomElevatedButton(width: 200.h, text: "lbl_next".tr, buttonStyle: CustomButtonStyles.fillPrimary, onPressed: () {onTapNext(context);})])])))); } 
+/// Section Widget
+PreferredSizeWidget _buildAppBar(BuildContext context) { return CustomAppBar(height: 440.v, leadingWidth: 44.h, leading: AppbarLeadingImage(imagePath: ImageConstant.imgArrowDown, margin: EdgeInsets.only(left: 20.h, top: 12.v, bottom: 404.v), onTap: () {onTapArrowDown(context);}), actions: [AppbarSubtitleFive(text: "lbl_skip".tr, margin: EdgeInsets.fromLTRB(24.h, 12.v, 24.h, 402.v), onTap: () {onTapSkip(context);})], styleType: Style.bgFill); } 
+/// Navigates to the onboardingOneScreen when the action is triggered.
+onTapArrowDown(BuildContext context) { NavigatorService.pushNamed(AppRoutes.onboardingOneScreen, ); } 
+/// Navigates to the loginScreen when the action is triggered.
+onTapSkip(BuildContext context) { NavigatorService.pushNamed(AppRoutes.loginScreen, ); } 
+/// Navigates to the onboardingThreeScreen when the action is triggered.
+onTapNext(BuildContext context) { NavigatorService.pushNamed(AppRoutes.onboardingThreeScreen, ); } 
+ }

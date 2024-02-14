@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/userprofilelist_item_model.dart';import 'package:tissue_culture/presentation/thirtytwo_screen/models/thirtytwo_model.dart';part 'thirtytwo_state.dart';final thirtytwoNotifier = StateNotifierProvider<ThirtytwoNotifier, ThirtytwoState>((ref) => ThirtytwoNotifier(ThirtytwoState(nameController: TextEditingController(), thirtytwoModelObj: ThirtytwoModel(userprofilelistItemList: [UserprofilelistItemModel(userImage: ImageConstant.imgRectangle4261, userImage1: ImageConstant.imgRectangle4256, userImage2: ImageConstant.imgRectangle4257, userImage3: ImageConstant.imgRectangle4258, userImage4: ImageConstant.imgRectangle4259, userImage5: ImageConstant.imgRectangle4260)]))));
+/// A notifier that manages the state of a Thirtytwo according to the event that is dispatched to it.
+class ThirtytwoNotifier extends StateNotifier<ThirtytwoState> {ThirtytwoNotifier(ThirtytwoState state) : super(state);
+
+ }

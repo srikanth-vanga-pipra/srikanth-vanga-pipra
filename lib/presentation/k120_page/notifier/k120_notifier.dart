@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/userprofile9_item_model.dart';import '../models/frame_item_model.dart';import 'package:tissue_culture/presentation/k120_page/models/k120_model.dart';part 'k120_state.dart';final k120Notifier = StateNotifierProvider<K120Notifier, K120State>((ref) => K120Notifier(K120State(editTextController: TextEditingController(), k120ModelObj: K120Model(userprofile9ItemList: [Userprofile9ItemModel(visitCompletedImage: ImageConstant.imgCheckmarkTealA400, visitCompletedText: "Visit \nCompleted", fiftyThreeText: "53"), Userprofile9ItemModel(visitCompletedImage: ImageConstant.imgClock, visitCompletedText: "Visit \nUpcoming", fiftyThreeText: "23")], frameItemList: List.generate(5, (index) => FrameItemModel())))));
+/// A notifier that manages the state of a K120 according to the event that is dispatched to it.
+class K120Notifier extends StateNotifier<K120State> {K120Notifier(K120State state) : super(state);
+
+void onSelectedChipView1(int index, bool value, ) { List<FrameItemModel> newList = List<FrameItemModel>.from(state.k120ModelObj!.frameItemList); newList[index] = newList[index].copyWith(isSelected: value); state = state.copyWith(k120ModelObj: state.k120ModelObj?.copyWith(frameItemList: newList)); } 
+ }

@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/dynamicimagestacklist_item_model.dart';import 'package:tissue_culture/presentation/twentyeight_screen/models/twentyeight_model.dart';part 'twentyeight_state.dart';final twentyeightNotifier = StateNotifierProvider<TwentyeightNotifier, TwentyeightState>((ref) => TwentyeightNotifier(TwentyeightState(nameController: TextEditingController(), twentyeightModelObj: TwentyeightModel(dynamicimagestacklistItemList: [DynamicimagestacklistItemModel(image1: ImageConstant.imgRectangle4261, image2: ImageConstant.imgRectangle4256, image3: ImageConstant.imgRectangle4257, image4: ImageConstant.imgRectangle4258, image5: ImageConstant.imgRectangle4259, image6: ImageConstant.imgRectangle4260)]))));
+/// A notifier that manages the state of a Twentyeight according to the event that is dispatched to it.
+class TwentyeightNotifier extends StateNotifier<TwentyeightState> {TwentyeightNotifier(TwentyeightState state) : super(state);
+
+ }
